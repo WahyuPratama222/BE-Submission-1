@@ -1,0 +1,32 @@
+{
+    "info": {
+        "name": "Games API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get All Games",
+            "request": {
+                "method": "GET",
+                "url": "http://localhost:3000/games"
+            }
+        },
+        {
+            "name": "Create Game",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/games",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Elden Ring\",\n    \"genre\": \"RPG\",\n    \"platform\": \"PC\",\n    \"price\": 59.99\n}"
+                }
+            }
+        }
+    ]
+}
