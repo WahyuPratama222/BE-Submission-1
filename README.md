@@ -87,17 +87,53 @@ DB_PORT=          # Default MySQL: 3306
 
 ## 🚀 Cara Menjalankan
 
-Pastikan **Docker** sudah terinstall, lalu jalankan:
+### 1. Clone repository
+
+```bash
+git clone https://github.com/WahyuPratama222/BE-Submission-1.git
+cd BE-Submission-1
+```
+
+### 2. Setup environment
+
+```bash
+cp .env.example .env
+```
+
+Sesuaikan nilai di `.env` — terutama `DB_PASSWORD` dan `PORT` jika ingin menggunakan port selain `3000`.
+
+### 3. Jalankan dengan Docker
+
+Pastikan **Docker** sudah terinstall, lalu:
 
 ```bash
 docker-compose up -d
 ```
 
-Aplikasi akan berjalan di `http://localhost:3000`
+Aplikasi akan berjalan di `http://localhost:{PORT}` sesuai nilai `PORT` di `.env`.
 
-Untuk menghentikan:
+---
+
+## 🛠️ Perintah Berguna
+
 ```bash
+# Cek status container
+docker ps
+
+# Lihat logs aplikasi
+docker logs games_app
+
+# Lihat logs database
+docker logs games_db
+
+# Hentikan container (tanpa menghapus)
+docker-compose stop
+
+# Menghapus container
 docker-compose down
+
+# Rebuild image setelah ada perubahan kode
+docker-compose up -d --build
 ```
 
 ---
